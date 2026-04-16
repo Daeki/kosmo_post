@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- mapper.java의 풀패키지명.클래스명 -->
+  <mapper namespace="com.winter.app.board.notice.NoticeMapper">
+  	<!-- ID는 mapper.java의 메서드명 -->
+  	<select id="list" resultType="NoticeDTO">
+  		SELECT * FROM "TB_NOTICE"
+  	</select>
+  
+  
+  </mapper>
