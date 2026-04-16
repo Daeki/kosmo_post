@@ -17,6 +17,25 @@ class NoticeMapperTest {
 	private NoticeMapper noticeMapper;
 	
 	@Test
+	void testCreate()throws Exception{
+		
+		for(int i=0;i<23;i++) {
+			NoticeDTO noticeDTO = new NoticeDTO();
+			noticeDTO.setBoardTitle("title"+i);
+			noticeDTO.setBoardWriter("writer"+i);
+			noticeDTO.setBoardContents("contents"+i);
+			noticeMapper.create(noticeDTO);
+			if(i%3 ==0) {
+				Thread.sleep(500);
+			}
+			
+		}
+		
+		System.out.println("finish");
+		
+	}
+	
+	@Test
 	void testList() throws Exception {
 		List<BoardDTO> ar = noticeMapper.list();
 		assertNotEquals(0, ar.size());
