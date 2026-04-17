@@ -17,6 +17,7 @@ public class QnaService implements BoardService {
 
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {
+		pager.makePageNum(qnaMapper.getCount(pager));
 		pager.makeStartNum();
 		return qnaMapper.list(pager);
 	}

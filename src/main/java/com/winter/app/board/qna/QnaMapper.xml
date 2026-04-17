@@ -13,6 +13,11 @@
   		</choose>
   		LIKE concat('%', #{search}, '%')
   	</sql>
+  	
+  	  <select id="getCount" resultType="Long" parameterType="Pager">
+  		SELECT COUNT("BOARD_NUM") FROM "TB_QNA"
+  		<include refid="search_sql"></include>
+  	</select>
   	<select id="list" resultType="QnaDTO" parameterType="Pager">
   		SELECT * FROM "TB_QNA"
   		<include refid="search_sql"></include>
