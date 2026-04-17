@@ -25,9 +25,13 @@
   		LIMIT #{perPage} OFFSET #{startNum}
   	</select>
   	
-  	<insert id="create" parameterType="QnaDTO">
+  	<insert id="create" parameterType="QnaDTO" useGeneratedKeys="true" keyProperty="boardNum">
   		INSERT INTO "TB_QNA"
   		VALUES (default, #{boardTitle}, #{boardWriter}, #{boardContents}, now(), 0,0,0,0)
+  	</insert>
+  	  	<insert id="createFile" parameterType="QnaFileDTO">
+  		INSERT INTO "TB_QNAFILE"
+  		VALUES (DEFAULT,#{fileName}, #{oriName}, #{boardNum})
   	</insert>
   	
   </mapper>
