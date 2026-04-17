@@ -4,8 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.winter.app.board.qna.QnaMapper">
-  	<select id="list" resultType="QnaDTO">
+  	<select id="list" resultType="QnaDTO" parameterType="Pager">
   		SELECT * FROM "TB_QNA"
+  		ORDER BY "BOARD_NUM" DESC
+  		LIMIT #{perPage} OFFSET #{startNum}
   	</select>
   	
   	<insert id="create" parameterType="QnaDTO">
