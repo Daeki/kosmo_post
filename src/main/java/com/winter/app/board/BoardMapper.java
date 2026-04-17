@@ -2,6 +2,7 @@ package com.winter.app.board;
 
 import java.util.List;
 
+import com.winter.app.file.FileDTO;
 import com.winter.app.pager.Pager;
 
 public interface BoardMapper {
@@ -16,6 +17,8 @@ public interface BoardMapper {
 	
 	//C - create
 	public int create(BoardDTO boardDTO)throws Exception;
+	
+	public int createFile(FileDTO fileDTO)throws Exception;
 	
 	//U - update
 	public int update(BoardDTO boardDTO)throws Exception;

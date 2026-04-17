@@ -28,9 +28,15 @@
   		LIMIT #{perPage} OFFSET #{startNum}
   	</select>
   	
-  	<insert id="create" parameterType="NoticeDTO">
+  	<insert id="create" parameterType="NoticeDTO" useGeneratedKeys="true" keyProperty="boardNum">
+  		
   		INSERT INTO "TB_NOTICE" 
   		VALUES (DEFAULT,#{boardTitle}, #{boardWriter}, #{boardContents},now(), 0)
+  	</insert>
+  	
+  	<insert id="createFile" parameterType="NoticeFileDTO">
+  		INSERT INTO "TB_NOTICEFILE"
+  		VALUES (DEFAULT,#{fileName}, #{oriName}, #{boardNum})
   	</insert>
   
   
