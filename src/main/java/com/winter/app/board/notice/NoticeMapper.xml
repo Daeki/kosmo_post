@@ -6,8 +6,10 @@
   <!-- mapper.java의 풀패키지명.클래스명 -->
   <mapper namespace="com.winter.app.board.notice.NoticeMapper">
   	<!-- ID는 mapper.java의 메서드명 -->
-  	<select id="list" resultType="NoticeDTO">
+  	<select id="list" resultType="NoticeDTO" parameterType="Pager">
   		SELECT * FROM "TB_NOTICE"
+  		ORDER BY "BOARD_NUM" DESC
+  		LIMIT #{perPage} OFFSET #{startNum}
   	</select>
   	
   	<insert id="create" parameterType="NoticeDTO">

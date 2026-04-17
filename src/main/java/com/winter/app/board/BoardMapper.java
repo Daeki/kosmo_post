@@ -2,13 +2,15 @@ package com.winter.app.board;
 
 import java.util.List;
 
+import com.winter.app.pager.Pager;
+
 public interface BoardMapper {
 	
 	//CRUD
 	
 	//R-read
 	//List
-	public List<BoardDTO> list()throws Exception;
+	public List<BoardDTO> list(Pager pager)throws Exception;
 	
 	public BoardDTO detail(BoardDTO boardDTO)throws Exception;
 	
