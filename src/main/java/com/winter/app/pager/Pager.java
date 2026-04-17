@@ -9,6 +9,13 @@ import lombok.ToString;
 @ToString
 public class Pager {
 	
+	//검색어
+	private String search="";
+	
+	//검색컬럼
+	private String kind; //v1:title, v2:contents, v3:writer
+	
+	
 	//페이지 번호
 	private Long page;
 	

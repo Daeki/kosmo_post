@@ -5,9 +5,20 @@
   
   <!-- mapper.java의 풀패키지명.클래스명 -->
   <mapper namespace="com.winter.app.board.notice.NoticeMapper">
+  	<sql id="search_sql">
+  		WHERE
+  		<choose>
+  			<when test="kind == 'v2'">"BOARD_CONTENTS"</when>
+  			<when test="kind == 'v3'">"BOARD_WRITER"</when>
+  			<otherwise>"BOARD_TITLE"</otherwise>
+  		</choose>
+  		LIKE concat('%', #{search}, '%')
+  	</sql>
+  
   	<!-- ID는 mapper.java의 메서드명 -->
   	<select id="list" resultType="NoticeDTO" parameterType="Pager">
   		SELECT * FROM "TB_NOTICE"
+  		<include refid="search_sql"></include>
   		ORDER BY "BOARD_NUM" DESC
   		LIMIT #{perPage} OFFSET #{startNum}
   	</select>
