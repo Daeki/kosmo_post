@@ -18,6 +18,7 @@ public class NoticeService implements BoardService {
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {
 		
+		pager.makePageNum(noticeMapper.getCount(pager));
 		pager.makeStartNum();
 		
 		return noticeMapper.list(pager);

@@ -7,7 +7,7 @@ import com.winter.app.pager.Pager;
 public interface BoardMapper {
 	
 	//CRUD
-	
+	public Long getCount(Pager pager)throws Exception;
 	//R-read
 	//List
 	public List<BoardDTO> list(Pager pager)throws Exception;
