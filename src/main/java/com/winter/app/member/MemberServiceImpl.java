@@ -39,5 +39,18 @@ public class MemberServiceImpl implements MemberService{
 		
 		return result;
 	}
+	
+	@Override
+	public MemberDTO detail(MemberDTO memberDTO) throws Exception {
+		MemberDTO check = memberMapper.detail(memberDTO);
+		
+		if(check != null) {
+			if(check.getPassword().equals(memberDTO.getPassword())) {
+				return check;
+			}
+		}
+		
+		return null;
+	}
 
 }

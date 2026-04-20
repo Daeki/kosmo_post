@@ -14,4 +14,28 @@
   		VALUES (#{fileName}, #{oriName}, #{username})
   	</insert>
   	
+  	<select id="detail" parameterType="MemberDTO" resultMap="detailResult">
+  		SELECT *
+  		FROM "TB_MEMBER" M
+  			 LEFT JOIN
+  			 "TB_PROFILE" F
+  			 USING("USERNAME")
+  		WHERE "USERNAME"=#{username}
+  	</select>
+  	
+  	<resultMap type="MemberDTO" id="detailResult">
+  		<id column="USERNAME" property="username"/>
+  		<result column="NAME" property="name"/>
+  		<result column="PASSWORD" property="password"/>
+  		<result column="phone" property="phone"/>
+  		<result column="EMAIL" property="email"/>
+  		<result column="birth" property="birth"/>
+  		<association property="profileDTO" javaType="ProfileDTO">
+  			<id column="FILE_NUM" property="fileNum"/>
+  			<result column="FILE_NAME" property="fileName"/>
+  			<result column="ORI_NAME" property="oriName"/>
+  		</association>
+  		
+  	</resultMap>
+  	
   </mapper>
