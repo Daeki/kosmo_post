@@ -35,6 +35,13 @@ public class NoticeController {
 		return "board/list";
 	}
 	
+	@GetMapping("detail")
+	public String detail(NoticeDTO noticeDTO, Model model)throws Exception{
+		BoardDTO boardDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/detail";
+	}
+	
 	@GetMapping("create")
 	public String create()throws Exception{
 		return "board/create";

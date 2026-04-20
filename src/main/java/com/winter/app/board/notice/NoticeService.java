@@ -37,7 +37,7 @@ public class NoticeService implements BoardService {
 	@Override
 	public BoardDTO detail(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return noticeMapper.detail(boardDTO);
 	}
 
 	@Override
