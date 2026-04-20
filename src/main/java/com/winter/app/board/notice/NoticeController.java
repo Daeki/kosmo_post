@@ -64,5 +64,19 @@ public class NoticeController {
 		return "redirect:./list";
 	}
 	
+	@GetMapping("update")
+	public String update(NoticeDTO noticeDTO, Model model)throws Exception{
+		BoardDTO boardDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/update";
+	}
+	
+	@PostMapping("update")
+	public String update(NoticeDTO noticeDTO, @RequestParam("attach") MultipartFile [] attach)throws Exception{
+		int result = noticeService.update(noticeDTO, attach);
+		
+		return "redirect:./list";
+	}
+	
 
 }

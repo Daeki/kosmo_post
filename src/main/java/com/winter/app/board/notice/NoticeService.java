@@ -72,9 +72,9 @@ public class NoticeService implements BoardService {
 	}
 
 	@Override
-	public int update(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(BoardDTO boardDTO, MultipartFile [] attach) throws Exception {
+		int result = noticeMapper.update(boardDTO);
+		return result;
 	}
 
 	@Override
