@@ -3,6 +3,7 @@ package com.winter.app.board.notice;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,14 @@ public class NoticeController {
 	
 	@Autowired
 	private NoticeService noticeService;
+	
+	@Value("${app.board.notice}")
+	private String name;
+	
+	@ModelAttribute("name")
+	public String getName() {
+		return this.name;
+	}
 	
 	@GetMapping("list")
 	public String list(Pager pager, Model model)throws Exception{
