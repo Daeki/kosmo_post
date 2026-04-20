@@ -3,7 +3,10 @@ package com.winter.app.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/member/*")
@@ -14,5 +17,13 @@ public class MemberController {
 	
 	@GetMapping("join")
 	public void join()throws Exception{}
+	
+	@PostMapping("join")
+	public String join(MemberDTO memberDTO,@RequestParam("attach") MultipartFile attach)throws Exception{
+		int result = memberService.join(memberDTO, attach);
+		
+		return "redirect:/";
+		
+	}
 
 }
