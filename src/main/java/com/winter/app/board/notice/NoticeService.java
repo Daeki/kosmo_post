@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.board.BoardDTO;
 import com.winter.app.board.BoardService;
+import com.winter.app.file.FileDTO;
 import com.winter.app.file.FileManager;
 import com.winter.app.pager.Pager;
 
@@ -79,8 +80,17 @@ public class NoticeService implements BoardService {
 
 	@Override
 	public int delete(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		//파일명 조회
+		boardDTO = noticeMapper.detail(boardDTO);
+		
+		//HDD에서 파일 삭제
+		for(FileDTO fileDTO:boardDTO.getList()) {
+			fileManager.fileDelete(name, fileDTO);
+		}
+		
+		//DB에서 삭제
+		int result = noticeMapper.delete(boardDTO);
+		return result;
 	}
 	
 	

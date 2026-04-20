@@ -62,5 +62,19 @@ public class QnaController {
 		
 		return "redirect:./list";
 	}
+	
+	@GetMapping("update")
+	public String update(QnaDTO qnaDTO, Model model)throws Exception{
+		BoardDTO boardDTO = qnaService.detail(qnaDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/update";
+	}
+	
+	@PostMapping("update")
+	public String update(QnaDTO qnaDTO, @RequestParam("attach") MultipartFile [] attach)throws Exception{
+		int result = qnaService.update(qnaDTO, attach);
+		
+		return "redirect:./list";
+	}
 
 }

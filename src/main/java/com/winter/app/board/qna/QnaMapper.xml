@@ -59,4 +59,12 @@
   		VALUES (DEFAULT,#{fileName}, #{oriName}, #{boardNum})
   	</insert>
   	
+  	  	<update id="update" parameterType="QnaDTO">
+  		UPDATE "TB_QNA"
+  		SET 
+  			"BOARD_TITLE"=#{boardTitle},
+  			"BOARD_CONTENTS"=#{boardContents}
+  		WHERE "BOARD_NUM"=#{boardNum}	
+  	</update>
+  	
   </mapper>

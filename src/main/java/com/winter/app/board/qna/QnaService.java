@@ -68,9 +68,9 @@ public class QnaService implements BoardService {
 	}
 
 	@Override
-	public int update(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(BoardDTO boardDTO, MultipartFile[] attach) throws Exception {
+		int result = qnaMapper.update(boardDTO);
+		return result;
 	}
 
 	@Override
