@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.board.BoardDTO;
+import com.winter.app.board.notice.NoticeDTO;
 import com.winter.app.pager.Pager;
 
 @Controller
@@ -29,6 +30,13 @@ public class QnaController {
 		model.addAttribute("list", ar);
 		
 		return "board/list";
+	}
+	
+	@GetMapping("detail")
+	public String detail(QnaDTO qnaDTO, Model model)throws Exception{
+		BoardDTO boardDTO = qnaService.detail(qnaDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/detail";
 	}
 	
 	@GetMapping("create")
