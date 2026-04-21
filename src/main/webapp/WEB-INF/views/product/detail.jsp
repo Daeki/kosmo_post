@@ -20,7 +20,10 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Product Detail Page</h1>
-
+                    
+                    <h3>${dto.productName}</h3>
+					<h3>${dto.productRate}</h3>
+					<a href="../account/create?productNum=${dto.productNum}" class="btn btn-primary">상품 가입</a>
                 </div>
                 <!-- End Page container-fluid -->
                 

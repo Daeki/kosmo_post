@@ -35,7 +35,7 @@
                     		</div>
                     	</c:forEach>
                     
-                    
+                    	<a href="./create" class="btn btn-danger">상품등록</a>
                     </div>
                     
 
