@@ -27,7 +27,8 @@
 					<c:if test="${empty member}">                    
                     <h3>비 로그인 상태</h3>
                     </c:if>
-
+                    
+					
                 </div>
                 <!-- End Page container-fluid -->
                 
