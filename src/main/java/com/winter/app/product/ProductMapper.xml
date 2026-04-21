@@ -53,7 +53,7 @@
   	
   	</resultMap>
   	
-  	<insert id="create" parameterType="ProductDTO">
+  	<insert id="create" parameterType="ProductDTO" useGeneratedKeys="true" keyProperty="productNum">
   		INSERT INTO "TB_PRODUCT"
   		VALUES(default, #{productName}, #{productContents}, #{productType}, #{productRate})
   	</insert>
