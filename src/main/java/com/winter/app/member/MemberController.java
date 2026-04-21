@@ -17,6 +17,11 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	@GetMapping("mypage")
+	public String mypage()throws Exception{
+		return "member/mypage";
+	}
+	
 	@GetMapping("join")
 	public void join()throws Exception{}
 	
