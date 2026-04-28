@@ -34,7 +34,11 @@
 						  <div class="form-group">
 						    <label for="password">Password</label>
 						    <input type="password" name="password" class="form-control" id="password" >
-						  </div>						 
+						  </div>	
+						  <div class="form-group">
+						    <label for="passwordCheck">Password Check</label>
+						    <input type="password" name="password" class="form-control" id="passwordCheck" >
+						  </div>							  					 
 						  <div class="form-group">
 						    <label for="name">Name</label>
 						    <input type="text" name="name" class="form-control" id="name" >
@@ -57,7 +61,7 @@
 						  	<input type="file" name="attach" class="form-control">
 						  </div>
 						  				  					  
-						  <button type="submit" class="btn btn-primary">Submit</button>
+						  <button type="button" class="btn btn-primary">Submit</button>
 						</form>
                     	
                     
@@ -84,6 +88,7 @@
         height: 100
       });
     </script>
+	<script src="/js/member/join.js"></script>
 
 </body>
 </html>
