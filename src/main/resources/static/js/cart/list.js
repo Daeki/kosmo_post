@@ -1,5 +1,12 @@
 const all = document.getElementById("all");
 const ch = document.querySelectorAll(".ch")//document.getElementsByClassName("ch");
+const del = document.getElementsByClassName("del");
+
+for(d of del){
+    d.addEventListener("click", ()=>{
+        console.log("click")
+    })
+}
 
 all.addEventListener("click", ()=>{
     ch.forEach((c)=>{

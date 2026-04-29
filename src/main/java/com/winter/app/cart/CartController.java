@@ -40,6 +40,13 @@ public class CartController {
 		return "commons/ajaxResult";
 	}
 	
+	@PostMapping("delete")
+	public void delete(CartDTO cartDTO)throws Exception{
+		System.out.println(cartDTO.getProductNum());
+		//int result = cartService.delete(cartDTO);
+		
+	}
+	
 	
 
 }

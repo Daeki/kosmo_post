@@ -36,7 +36,7 @@
 	                    		<div class="card">
 	                    		  <div class="card-header">
 	                    		  	<input class="ch" type="checkbox" id="ch${i.index}"> 
-	                    		  	<button class="btn btn-info ">삭제</button>
+	                    		  	<button class="btn btn-info del">삭제</button>
 	                    		  </div>		
 								  <img src="/files/product/${p.productFileDTO.fileName}" class="card-img-top" alt="...">
 								  <div class="card-body">
