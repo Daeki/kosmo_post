@@ -1,5 +1,6 @@
 package com.winter.app.cart;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.winter.app.member.MemberDTO;
 import com.winter.app.product.ProductDTO;
@@ -41,10 +43,19 @@ public class CartController {
 	}
 	
 	@PostMapping("delete")
-	public String delete(HttpSession session, CartDTO cartDTO, Model model)throws Exception{
+	public String delete(HttpSession session, @RequestParam("productNum") Long [] productNum, Model model)throws Exception{
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
-		cartDTO.setUsername(memberDTO.getUsername());
-		int result = cartService.delete(cartDTO);
+		
+		List<CartDTO> ar = new ArrayList<>();
+		
+		for(Long l : productNum) {
+			CartDTO cartDTO = new CartDTO();
+			cartDTO.setProductNum(l);
+			cartDTO.setUsername(memberDTO.getUsername());
+			ar.add(cartDTO);
+		}
+		
+		int result = cartService.delete(ar);
 		model.addAttribute("result", 1);
 		return "commons/ajaxResult";
 		

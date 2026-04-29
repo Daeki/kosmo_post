@@ -24,7 +24,7 @@
                     <div class="row">
                     	<div>
                     		<input type="checkbox" id="all">
-                    		<button class="btn btn-primary">선택삭제</button>
+                    		<button id="selectdel" class="btn btn-primary">선택삭제</button>
                     		<button class="btn btn-danger">선택가입</button>
                     	</div>
                     </div>
