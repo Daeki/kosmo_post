@@ -1,7 +1,7 @@
 const all = document.getElementById("all");
-const ch = document.querySelectorAll(".ch")//document.getElementsByClassName("ch");//checkbox
-const del = document.getElementsByClassName("del"); //개별삭제 버튼
+
 const selectdel = document.getElementById("selectdel");
+
 const list = document.getElementById("list")
 
 getList();
@@ -17,6 +17,7 @@ function getList(){
 
 selectdel.addEventListener("click", ()=>{
     let pn = new URLSearchParams();
+    let ch = document.querySelectorAll(".ch")
     ch.forEach((c)=>{
         if(c.checked){
             pn.append("productNum", c.getAttribute("data-pn"));
@@ -74,6 +75,7 @@ list.addEventListener("click", (e)=>{
     
 
 all.addEventListener("click", ()=>{
+    let ch = document.querySelectorAll(".ch")
     ch.forEach((c)=>{
         c.checked=all.checked;
     });
