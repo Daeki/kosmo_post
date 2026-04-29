@@ -39,9 +39,10 @@ selectdel.addEventListener("click", ()=>{
 
 })
 
-list.addEventListener("click", (e)=>{
-    if(e.target.classList.contains("del")){
-        let pn = e.target.previousElementSibling.getAttribute("data-pn")
+for(let d of del){
+    
+    d.addEventListener("click", ()=>{
+        let pn = d.previousElementSibling.getAttribute("data-pn")
         let p = new URLSearchParams();
         p.append("productNum", pn);
 
@@ -57,21 +58,9 @@ list.addEventListener("click", (e)=>{
             }else {
                 alert('삭제 실패')
             }
-        }) 
-    }
-
-    if(e.target.classList.contains("ch")){
-        let chs = document.getElementsByClassName("ch")
-        let r = true;
-        for(let c of chs){
-            if(!c.checked){
-                r=false;
-            }
-        }
-        all.checked=r;
-    }
-})
-    
+        })
+    })
+}
 
 all.addEventListener("click", ()=>{
     ch.forEach((c)=>{
@@ -79,4 +68,16 @@ all.addEventListener("click", ()=>{
     });
 })
 
+ch.forEach(c=>{
+    c.addEventListener("click", ()=>{
+        let r=true;
+        ch.forEach((e)=>{
+            if(!e.checked){
+                r=false;
+            }
+        })
 
+        all.checked=r;
+
+    })
+})

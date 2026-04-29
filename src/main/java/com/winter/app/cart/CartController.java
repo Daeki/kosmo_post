@@ -24,6 +24,9 @@ public class CartController {
 	private CartService cartService;
 	
 	@GetMapping("list")
+	public void list()throws Exception{}
+
+	@GetMapping("cartlist")
 	public void list(HttpSession session, Model model)throws Exception{
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		List<ProductDTO> ar = cartService.list(memberDTO);
@@ -56,7 +59,7 @@ public class CartController {
 		}
 		
 		int result = cartService.delete(ar);
-		model.addAttribute("result", 1);
+		model.addAttribute("result", result);
 		return "commons/ajaxResult";
 		
 	}
