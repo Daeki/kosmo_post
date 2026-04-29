@@ -23,7 +23,7 @@
                     
                     <div class="row">
                     	<div>
-                    		<input type="checkbox">
+                    		<input type="checkbox" id="all">
                     		<button class="btn btn-primary">선택삭제</button>
                     		<button class="btn btn-danger">선택가입</button>
                     	</div>
@@ -35,7 +35,8 @@
                     		<div class="col-4">
 	                    		<div class="card">
 	                    		  <div class="card-header">
-	                    		  	<input type="checkbox" id="ch${i.index}"> <button class="btn btn-info">삭제</button>
+	                    		  	<input class="ch" type="checkbox" id="ch${i.index}"> 
+	                    		  	<button class="btn btn-info ">삭제</button>
 	                    		  </div>		
 								  <img src="/files/product/${p.productFileDTO.fileName}" class="card-img-top" alt="...">
 								  <div class="card-body">
