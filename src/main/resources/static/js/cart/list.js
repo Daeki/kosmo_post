@@ -14,7 +14,14 @@ for(let d of del){
             body:p
         })
         .then(r=>r.text())
-        .then(r=>console.log(r))
+        .then(r=>{
+            r = r.trim();
+            if(r>0){
+               d.parentElement.parentElement.remove(); 
+            }else {
+                alert('삭제 실패')
+            }
+        })
     })
 }
 
