@@ -41,9 +41,12 @@ public class CartController {
 	}
 	
 	@PostMapping("delete")
-	public void delete(CartDTO cartDTO)throws Exception{
-		System.out.println(cartDTO.getProductNum());
+	public String delete(HttpSession session, CartDTO cartDTO, Model model)throws Exception{
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		cartDTO.setUsername(memberDTO.getUsername());
 		//int result = cartService.delete(cartDTO);
+		model.addAttribute("result", 1);
+		return "commons/ajaxResult";
 		
 	}
 	

@@ -33,10 +33,10 @@
                     
                     	<c:forEach items="${list}" var="p" varStatus="i">
                     		<div class="col-4">
-	                    		<div class="card">
+	                    		<div class="card" >
 	                    		  <div class="card-header">
-	                    		  	<input class="ch" type="checkbox" id="ch${i.index}"> 
-	                    		  	<button class="btn btn-info del">삭제</button>
+	                    		  	<input class="ch" data-pn="${p.productNum}" type="checkbox" id="ch${i.index}"> 
+	                    		  	<button class="btn btn-info del">삭제 ${p.productNum}</button>
 	                    		  </div>		
 								  <img src="/files/product/${p.productFileDTO.fileName}" class="card-img-top" alt="...">
 								  <div class="card-body">

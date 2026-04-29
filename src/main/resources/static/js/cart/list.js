@@ -2,9 +2,19 @@ const all = document.getElementById("all");
 const ch = document.querySelectorAll(".ch")//document.getElementsByClassName("ch");
 const del = document.getElementsByClassName("del");
 
-for(d of del){
+for(let d of del){
+    
     d.addEventListener("click", ()=>{
-        console.log("click")
+        let pn = d.previousElementSibling.getAttribute("data-pn")
+        let p = new URLSearchParams();
+        p.append("productNum", pn);
+
+        fetch("./delete", {
+            method:"POST",
+            body:p
+        })
+        .then(r=>r.text())
+        .then(r=>console.log(r))
     })
 }
 
