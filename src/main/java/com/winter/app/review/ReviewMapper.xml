@@ -19,4 +19,10 @@
   		WHERE "REVIEW_NUM"=#{reviewNum}
   	</delete>
   	
+  	<update id="update" parameterType="ReviewDTO">
+  		UPDATE "TB_REVIEW"
+  		SET "REVIEW_CONTENTS"=#{reviewContents}
+  		WHERE "REVIEW_NUM"=#{reviewNum}
+  	</update>
+  	
   </mapper>

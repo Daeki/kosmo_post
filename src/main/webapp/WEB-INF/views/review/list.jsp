@@ -23,7 +23,7 @@
   				<fmt:formatDate value="${parsedDateTime}" pattern="yyyy-MM-dd HH:mm" />
   			</td>
   			<td data-review-num="${r.reviewNum}">
-  				<button class="btn btn-success review_update">수정</button>
+  				<button class="btn btn-success review_update" data-toggle="modal" data-target="#reviewModal">수정</button>
   				<button class="btn btn-danger review_delete">삭제</button>
   			</td>
   			

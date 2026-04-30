@@ -30,5 +30,9 @@ public class ReviewService {
 		return reviewMapper.delete(reviewDTO);
 		 
 	}
+	
+	public int update(ReviewDTO reviewDTO)throws Exception{
+		return reviewMapper.update(reviewDTO);
+	}
 
 }

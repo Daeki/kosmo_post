@@ -43,5 +43,13 @@ public class ReviewController {
 		return "commons/ajaxResult";
 	}
 	
+	@PostMapping("update")
+	public String update(ReviewDTO reviewDTO, Model model)throws Exception{
+		
+		int result = reviewService.update(reviewDTO);
+		model.addAttribute("result", result);
+		return "commons/ajaxResult";
+	}
+	
 
 }
