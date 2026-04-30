@@ -1,8 +1,37 @@
 
 
 const review_list = document.getElementById("review_list");
-console.log(review_list.getAttribute("data-product-num"));
-getList(review_list.getAttribute("data-product-num"));
+const review_contents = document.getElementById("review_contents")
+const review_add = document.getElementById("review_add")
+
+const product_num = review_list.getAttribute("data-product-num");
+getList(product_num);
+
+
+review_add.addEventListener("click", ()=>{
+    let p = new FormData();
+    p.append("reviewContents", review_contents.value)
+    p.append("productNum", product_num);
+    p.append("reviewStar", 4);
+
+    fetch("../review/create", {
+        method:"POST",
+        body:p
+    })
+    .then(r=>r.text())
+    .then(r=>{
+        r=r.trim();
+        if(r>0){
+            alert("등록 성공")
+            getList(product_num);
+        }else {
+            alert("등록 실패")
+        }
+
+        review_contents.value=""
+        review_contents.innerText=""
+    })
+})
 
 function getList(num){
     

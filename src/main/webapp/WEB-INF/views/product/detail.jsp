@@ -33,8 +33,8 @@
 					</div>
 					
 					<div>
-						<textarea rows="6"></textarea>
-						<button>등록</button>
+						<textarea rows="6" id="review_contents"></textarea>
+						<button id="review_add">등록</button>
 					</div>
                 </div>
                 <!-- End Page container-fluid -->

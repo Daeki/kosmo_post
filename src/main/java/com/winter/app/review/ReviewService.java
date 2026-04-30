@@ -14,5 +14,9 @@ public class ReviewService {
 	public List<ReviewDTO> list (ReviewDTO reviewDTO)throws Exception{
 		return reviewMapper.list(reviewDTO);
 	}
+	
+	public int create(ReviewDTO reviewDTO)throws Exception{
+		return reviewMapper.create(reviewDTO);
+	}
 
 }

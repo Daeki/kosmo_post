@@ -9,4 +9,8 @@
   		WHERE "PRODUCT_NUM"=#{productNum}
   		ORDER BY "REVIEW_NUM" DESC
   	</select>
+  	<insert id="create" parameterType="ReviewDTO">
+  		INSERT INTO "TB_REVIEW"
+  		VALUES (default, #{username}, #{reviewContents}, #{reviewStar}, now(), #{productNum})
+  	</insert>
   </mapper>
