@@ -10,6 +10,7 @@ const review_update_num = document.getElementById("review_update_num")
 const product_num = review_list.getAttribute("data-product-num");
 
 
+
 getList(product_num);
 
 //수정
