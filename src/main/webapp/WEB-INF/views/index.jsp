@@ -28,6 +28,8 @@
                     <h3>비 로그인 상태</h3>
                     </c:if>
                     
+                    <div id="map" style="width:500px;height:400px;"></div>
+                    
 					
                 </div>
                 <!-- End Page container-fluid -->
@@ -41,6 +43,16 @@
 	<!-- End Wrapper -->
 	
 	<c:import url="/WEB-INF/views/temp/footer_script.jsp"></c:import>
-
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a51fbcc2036a3caba4c7de7ab3e51474"></script>
+	<script type="text/javascript">
+	const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+		let options = { //지도를 생성할 때 필요한 기본 옵션
+			center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+			level: 3 //지도의 레벨(확대, 축소 정도)
+		};
+	
+		let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+	
+	</script>
 </body>
 </html>
