@@ -13,4 +13,10 @@
   		INSERT INTO "TB_REVIEW"
   		VALUES (default, #{username}, #{reviewContents}, #{reviewStar}, now(), #{productNum})
   	</insert>
+  	
+  	<delete id="delete" parameterType="ReviewDTO">
+  		DELETE FROM "TB_REVIEW"
+  		WHERE "REVIEW_NUM"=#{reviewNum}
+  	</delete>
+  	
   </mapper>

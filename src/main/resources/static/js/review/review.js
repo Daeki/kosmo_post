@@ -7,7 +7,32 @@ const review_add = document.getElementById("review_add")
 const product_num = review_list.getAttribute("data-product-num");
 getList(product_num);
 
+//삭제
+review_list.addEventListener("click", (e)=>{
+    if(e.target.classList.contains("review_delete")){
+        let n = e.target.parentElement.getAttribute("data-review-num");
+        let p = new URLSearchParams();
+        p.append("reviewNum", n)
 
+        fetch("/review/delete", {
+            method:"POST",
+            body:p
+        })
+        .then(r=>r.text())
+        .then(r=>{
+            r=r.trim();
+            if(r>0){
+                alert('삭제 성공')
+                getList(product_num)
+            }else {
+                alert('삭제 실패')
+            }
+        })
+    }
+})
+
+
+//추가
 review_add.addEventListener("click", ()=>{
     let p = new FormData();
     p.append("reviewContents", review_contents.value)

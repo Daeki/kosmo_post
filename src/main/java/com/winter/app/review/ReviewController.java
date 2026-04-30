@@ -35,5 +35,13 @@ public class ReviewController {
 		return "commons/ajaxResult";
 	}
 	
+	@PostMapping("delete")
+	public String delete(ReviewDTO reviewDTO, Model model)throws Exception{
+		
+		int result = reviewService.delete(reviewDTO);
+		model.addAttribute("result", result);
+		return "commons/ajaxResult";
+	}
+	
 
 }
