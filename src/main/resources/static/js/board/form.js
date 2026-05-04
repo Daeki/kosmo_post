@@ -17,7 +17,7 @@ const create = document.getElementById("create");
 
 // })
 
-let count=0;
+let count=1;
 
 add.addEventListener("click", function(){
     if(count>4){

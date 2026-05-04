@@ -46,7 +46,7 @@
 							<button type="button" id="add">File Add</button>
 						  </div>
 
-						  <div class="form-group" id="result">
+						  <div class="form-group" id="result" data-file-size="${dto.list.size()}">
 							
 						  	<label>첨부파일</label>
 
