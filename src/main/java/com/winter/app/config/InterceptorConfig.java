@@ -12,8 +12,7 @@ import com.winter.app.interceptors.WriterCheckInterceptor;
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 	
-	@Autowired
-	private TestInterceptor testInterceptor;
+
 	
 	@Autowired
 	private LoginCheckInterceptor loginCheckInterceptor;
@@ -26,6 +25,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
 		
 		//member로 시작하는 모든 url, login, join
 		//qna list를 제외한 나머지들은 회원만 사용 가능
+		//적용할 Interceptor등로
+		//Interceptor를 사용할 URL 패턴 작성, addPathPatterns 여러번 호출 가능
+		//Interceptor를 제외할 URL 패턴 작성, excludePathPatterns 여러번 호출 가능		
 		registry.addInterceptor(loginCheckInterceptor)
 				.addPathPatterns("/member/*")
 				.addPathPatterns("/qna/*")
@@ -38,15 +40,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 				;
 		
 		
-		//적용할 Interceptor등로
-		registry.addInterceptor(testInterceptor)
-		
-		//Interceptor를 사용할 URL 패턴 작성, addPathPatterns 여러번 호출 가능
-				.addPathPatterns("/notice/*", "/qna/*")
-		//Interceptor를 제외할 URL 패턴 작성, excludePathPatterns 여러번 호출 가능		
-				.excludePathPatterns("/notice/detail")
-				;
-		
+			
 	
 		
 				
