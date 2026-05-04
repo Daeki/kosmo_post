@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.board.BoardDTO;
 import com.winter.app.board.notice.NoticeDTO;
+import com.winter.app.file.FileDTO;
 import com.winter.app.pager.Pager;
 
 @Controller
@@ -81,6 +82,16 @@ public class QnaController {
 	public String delete(QnaDTO qnaDTO)throws Exception{
 		int result = qnaService.delete(qnaDTO);
 		return "redirect:./list";
+	}
+	
+	@GetMapping("down")
+	public String fileDown(FileDTO fileDTO, Model model)throws Exception{
+		fileDTO = qnaService.fileDetail(fileDTO);
+		
+		model.addAttribute("fileDTO", fileDTO);
+		
+		return "fileDownView";
+		
 	}
 
 }

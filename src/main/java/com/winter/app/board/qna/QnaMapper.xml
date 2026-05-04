@@ -88,4 +88,9 @@
 
   	</delete>
   	
+  	 <select id="fileDetail" parameterType="FileDTO" resultType="FileDTO">
+  		SELECT * FROM "TB_QNAFILE"
+  		WHERE "FILE_NUM"=#{fileNum}
+  	</select>
+  	
   </mapper>
