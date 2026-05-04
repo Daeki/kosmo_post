@@ -6,7 +6,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.winter.app.interceptors.LoginCheckInterceptor;
-import com.winter.app.interceptors.TestInterceptor;
 import com.winter.app.interceptors.WriterCheckInterceptor;
 
 @Configuration
