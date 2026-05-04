@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.winter.app.board.BoardDTO;
+import com.winter.app.file.FileDTO;
 import com.winter.app.pager.Pager;
 
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,16 @@ public class NoticeController {
 	@ModelAttribute("name")
 	public String getName() {
 		return this.name;
+	}
+	
+	@GetMapping("down")
+	public String fileDown(NoticeFileDTO noticeFileDTO, Model model)throws Exception{
+		
+		FileDTO fileDTO = noticeService.fileDetail(noticeFileDTO);
+		
+		model.addAttribute("fileDTO", fileDTO);
+		
+		return "fileDownView";
 	}
 	
 	@GetMapping("list")
