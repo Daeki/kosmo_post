@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.winter.app.interceptors.LoginCheckInterceptor;
 import com.winter.app.interceptors.TestInterceptor;
+import com.winter.app.interceptors.WriterCheckInterceptor;
 
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
@@ -16,6 +17,9 @@ public class InterceptorConfig implements WebMvcConfigurer {
 	
 	@Autowired
 	private LoginCheckInterceptor loginCheckInterceptor;
+	
+	@Autowired
+	private WriterCheckInterceptor writerCheckInterceptor;
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
@@ -27,6 +31,10 @@ public class InterceptorConfig implements WebMvcConfigurer {
 				.addPathPatterns("/qna/*")
 				.excludePathPatterns("/member/login", "/member/join")
 				.excludePathPatterns("/qna/list")
+				;
+		
+		registry.addInterceptor(writerCheckInterceptor)
+				.addPathPatterns("/notice/update", "/qna/update")
 				;
 		
 		
