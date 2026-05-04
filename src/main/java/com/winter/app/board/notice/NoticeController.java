@@ -77,7 +77,7 @@ public class NoticeController {
 	
 	@GetMapping("create")
 	public String create()throws Exception{
-		return "board/create";
+		return "board/board_form";
 	}
 
 	@PostMapping("create")
@@ -96,7 +96,7 @@ public class NoticeController {
 	public String update(NoticeDTO noticeDTO, Model model)throws Exception{
 		BoardDTO boardDTO = noticeService.detail(noticeDTO);
 		model.addAttribute("dto", boardDTO);
-		return "board/update";
+		return "board/board_form";
 	}
 	
 	@PostMapping("update")

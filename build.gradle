@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
 	compileOnly 'org.projectlombok:lombok'
@@ -37,7 +38,6 @@ dependencies {
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
     runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl'
     
-	implementation 'org.springframework.boot:spring-boot-starter-aop'
 	
 }
 
