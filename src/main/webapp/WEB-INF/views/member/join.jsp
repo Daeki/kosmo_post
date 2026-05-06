@@ -27,45 +27,42 @@
                     <h1 class="h3 mb-4 text-gray-800">Create Page</h1>
                     
                     <div>
-	                    <form action="./join" method="post" enctype="multipart/form-data">
+                    	<form:form method="post" modelAttribute="memberDTO" enctype="multipart/form-data">
 						  <div class="form-group">
 						    <label for="username">Username</label>
-						    <input type="text" name="username" class="form-control" id="username" >
+						    <form:input path="username" cssClass="form-control" id="username"/>
 						  </div>
 						  <div class="form-group">
 						    <label for="password">Password</label>
-						    <input type="password" name="password" class="form-control" id="password" >
+						    <form:password path="password" cssClass="form-control" id="password""/>
 						  </div>	
 						  <div class="form-group">
 						    <label for="passwordCheck">Password Check</label>
-						    <input type="password" name="password" class="form-control" id="passwordCheck" >
+						    <form:password path="passwordCheck" class="form-control" id="passwordCheck"/>
 						  </div>							  					 
 						  <div class="form-group">
 						    <label for="name">Name</label>
-						    <input type="text" name="name" class="form-control" id="name" >
+						    <form:input path="name" class="form-control" id="name"/>
 						  </div>
 						  <div class="form-group">
 						    <label for="phone">Phone</label>
-						    <input type="tel" name="phone" class="form-control" id="phone" >
+						    <form:input path="phone" class="form-control" id="phone"/>
 						  </div>
 						  <div class="form-group">
 						    <label for="email">Email</label>
-						    <input type="email" name="email" class="form-control" id="email" >
+						    <form:input path="email" class="form-control" id="email"/>
 						  </div>						  
+                    	
 						  <div class="form-group">
 						    <label for="birth">Birth</label>
 						    <input type="date" name="bith" class="form-control" id="birth" >
 						  </div>
-						  
 						  <div class="form-group">
 						  	<label>첨부파일</label>
 						  	<input type="file" name="attach" class="form-control">
 						  </div>
-						  				  					  
 						  <button type="submit" class="btn btn-primary">Submit</button>
-						</form>
-                    	
-                    
+                    	</form:form>
                     </div>
 
                 </div>

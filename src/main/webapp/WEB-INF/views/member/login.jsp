@@ -37,6 +37,7 @@
 						  <div class="form-group">
 						    <label for="password">Password</label>
 						    <form:password path="password" cssClass="form-control" id="password" />
+						    <form:errors path="password"></form:errors>
 						  </div>						 
                     	  
 						  <button type="submit" class="btn btn-primary">Submit</button>
