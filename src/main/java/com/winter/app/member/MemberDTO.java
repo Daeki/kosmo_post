@@ -19,21 +19,25 @@ import lombok.ToString;
 @ToString
 public class MemberDTO {
 	
-	@NotBlank(message = "ID는 필수 입니다")
+	@NotBlank(groups = GroupAdd.class, message = "ID는 필수 입니다")
 	private String username;
 	
-	//@NotBlank
+	@NotBlank(groups = {GroupAdd.class, GroupUpdate.class})
 	private String name;
 	
 	
-	@Size(max = 10, min = 4)
-	@NotBlank
+	@Size(groups = GroupAdd.class, max = 10, min = 4)
+	@NotBlank(groups = GroupAdd.class)
 	private String password;
 	
+	private String passwordCheck;
+	
 	private String phone;
-	//@Email
+	
+	@Email(groups = {GroupAdd.class, GroupUpdate.class})
 	private String email;
-	//@Past
+	
+	@Past(groups = {GroupAdd.class, GroupUpdate.class})
 	private LocalDate birth;
 	
 	private ProfileDTO profileDTO;
