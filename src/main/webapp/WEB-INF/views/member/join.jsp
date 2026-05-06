@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +62,7 @@
 						  	<input type="file" name="attach" class="form-control">
 						  </div>
 						  				  					  
-						  <button type="button" class="btn btn-primary">Submit</button>
+						  <button type="submit" class="btn btn-primary">Submit</button>
 						</form>
                     	
                     
@@ -88,7 +89,7 @@
         height: 100
       });
     </script>
-	<script src="/js/member/join.js"></script>
+	<!-- <script src="/js/member/join.js"></script> -->
 
 </body>
 </html>

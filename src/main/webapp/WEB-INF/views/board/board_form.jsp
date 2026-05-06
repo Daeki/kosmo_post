@@ -49,6 +49,11 @@
 						  <div class="form-group" id="result" data-file-size="${dto.list.size()}">
 							
 						  	<label>첨부파일</label>
+						  	<c:forEach items="${dto.list}" var="f">
+						  		<div>
+						  			<span>${f.oriName}</span> <button type="button">X</button>
+						  		</div>
+						  	</c:forEach>
 
 						  </div>
 						  				  					  
